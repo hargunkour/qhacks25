@@ -1,8 +1,3 @@
-import pygame
-
-# Initialize Pygame
-pygame.init()
-
 # Set window dimensions
 WIDTH, HEIGHT = 1000, 650
 screen = pygame.display.set_mode((WIDTH, HEIGHT))
@@ -74,24 +69,24 @@ while running:
         elif event.type == pygame.MOUSEBUTTONDOWN:
             # Get mouse position
             mouse_pos = pygame.mouse.get_pos()
-            
+
             # Check if Sammy was clicked
             if bread_rect.collidepoint(mouse_pos):
                 bread_rect.x = 425
                 bread_rect.y = 250
-            
+
             if bread1_rect.collidepoint(mouse_pos):
                 bread1_rect.x = 425
                 bread1_rect.y = 250
-                 
+
             if t_ham_rect.collidepoint(mouse_pos):
                 ham_rect.x = 430
-                ham_rect.y = 260 
-            
+                ham_rect.y = 260
+
             if t_lettuce_rect.collidepoint(mouse_pos):
                 lettuce_rect.x = 450
                 lettuce_rect.y = 280
-            
+
             if t_mayo_rect.collidepoint(mouse_pos):  # Corrected line
                 mayo_rect.x = 470
                 mayo_rect.y = 290
@@ -100,7 +95,7 @@ while running:
                 bread_rect.x = bread1_rect.x = ham_rect.x = lettuce_rect.x = mayo_rect.x = plasticbag_rect.x = 10000  # Corrected line
                 sandwichbag_rect.x = 430
                 sandwichbag_rect.y = 250
-            
+
             if container_rect.collidepoint(mouse_pos):
                 bread_rect.x = bread1_rect.x = ham_rect.x = lettuce_rect.x = mayo_rect.x = container_rect.x = 10000  # Corrected line
                 sandwichcontainer_rect.x = 410

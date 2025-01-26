@@ -1,36 +1,23 @@
-import pygame
-
 # Initialize Pygame
-pygame.init()
+import pgzrun
 
 # Set window dimensions
 WIDTH, HEIGHT = 1000, 650
-screen = pygame.display.set_mode((WIDTH, HEIGHT))
-pygame.display.set_caption("Bathroom Animation Example")
 
 # Load images
-sink1 = pygame.image.load("assets/bgs/bathroom/sink1.png")
-sink1 = pygame.transform.scale(sink1, (WIDTH, HEIGHT))
 
-sink2 = pygame.image.load("assets/bgs/bathroom/sink2.png")
-sink2 = pygame.transform.scale(sink2, (WIDTH, HEIGHT))
+faucet = Actor("faucet")
+faucet.x = -5
+faucet.y = -35
 
-sink3 = pygame.image.load("assets/bgs/bathroom/sink3.png")
-sink3 = pygame.transform.scale(sink3, (WIDTH, HEIGHT))
+brush = Actor("brush")
+brush.x = 175
+brush.y = 300
 
-faucet = pygame.image.load("assets/bgs/bathroom/faucet.png")
-faucet = pygame.transform.scale(faucet, (1000, 900))
-faucet_rect = faucet.get_rect(topleft=(-5, -35))
-
-brush = pygame.image.load("assets/bgs/bathroom/brush.png")
-brush = pygame.transform.scale(brush, (130, 130))
-brush_rect = brush.get_rect(topleft=(175, 300))
-
-closebrush = pygame.image.load("assets/bgs/bathroom/closebrush.png")
-closebrush = pygame.transform.scale(closebrush, (800, 400))
+closebrush = Actor("closebrush")
 
 # Initialize variables
-background = sink3  # Start with sink3
+background = "sink3"  # Start with sink3
 sink_animation = False  # Sink animation state
 sink_timer = 0
 brush_animation = False  # Brush movement animation state
